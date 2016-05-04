@@ -2,23 +2,22 @@
 
 // App Module: the name AngularStore matches the ng-app attribute in the main <html> tag
 // the route provides parses the URL and injects the appropriate partial page
-var storeApp = angular.module('AngularStore', []).
+var storeApp = angular.module('AngularStore', ['ngRoute','ngAnimate']).
   config(['$routeProvider', function($routeProvider) {
   $routeProvider.
       when('/store', {
         templateUrl: 'partials/store.htm',
-        controller: storeController 
-      }).
-      when('/products/:productSku', {
-        templateUrl: 'partials/product.htm',
         controller: storeController
+
       }).
       when('/cart', {
         templateUrl: 'partials/shoppingCart.htm',
         controller: storeController
+
       }).
       otherwise({
         redirectTo: '/store'
+
       });
 }]);
 
@@ -37,7 +36,7 @@ storeApp.factory("DataService", function () {
     // shopping cart with PayPal, you have to create a merchant account with 
     // PayPal. You can do that here:
     // https://www.paypal.com/webapps/mpp/merchant
-    myCart.addCheckoutParameters("PayPal", "bernardo.castilho-facilitator@gmail.com");
+    myCart.addCheckoutParameters("PayPal", "buzzi321@gmail.com");
 
     // enable Google Wallet checkout
     // note: the second parameter identifies the merchant; in order to use the 

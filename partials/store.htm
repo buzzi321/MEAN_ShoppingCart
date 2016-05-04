@@ -1,43 +1,55 @@
-﻿<p class="text-info">
-    Welcome to the Angular Store.<br />
-    Please select the products you want and add them to your shopping cart.<br />
-    When you are done, click the shopping cart icon to review your order and check out.
-</p>
+﻿<div class="form-control">
 
-<p>
-    Search: <input ng-model="search">
-</p>
+    <input type="text" ng-model="search" class="search-query" style="width: 180px" placeholder="Search">
+    <br/>
+    <br/>
+</div>
 
-<table class="table table-bordered">
+
+<!--Products Table-->
+<table class="one table table-bordered">
     <tr class="well">
-        <td class="tdRight" colspan="4" >
-            <a href="default.htm#/cart" title="go to shopping cart" ng-disabled="cart.getTotalCount() < 1">
-                <i class="icon-shopping-cart" />
-                <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency}}</b>
-            </a>
-        </td>
-    </tr>
-    <tr ng-repeat="product in store.products | orderBy:'name' | filter:search" >
-        <td class="tdCenter"><img ng-src="img/products/{{product.sku}}.jpg" alt="{{product.name}}" /></td>
-        <td>
-            <a href="#/products/{{product.sku}}"><b>{{product.name}}</b></a><br />
+    <tr class="animate" ng-repeat="product in store.products | orderBy:'name' | filter:search">
+        <td class="tdCenter"><img ng-src="img/products/{{product.sku}}.jpg" alt="{{product.name}}"/></td>
+        <td class="tdCenter">
+            <b>{{product.name}}</b><br/>
             {{product.description}}
         </td>
         <td class="tdRight">
             {{product.price | currency}}
         </td>
-        <td class="tdCenter">
-            <a href="" ng-click="cart.addItem(product.sku, product.name, product.price, 1)">
-                add to cart
-            </a>
+        <td class="tdRight">
+            <input type="button" class="btn btn-info" value="Add to cart"
+                   ng-click="cart.addItem(product.sku, product.name, product.price, 1)">
+
+            </input>
         </td>
     </tr>
-    <tr class="well">
-        <td class="tdRight" colspan="4">
-            <a href="default.htm#/cart" title="go to shopping cart" ng-disabled="cart.getTotalCount() < 1">
-                <i class="icon-shopping-cart" />
-                <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency}}</b>
-            </a>
-        </td>
     </tr>
 </table>
+
+
+<!--Cart Table-->
+<table class="two table table-bordered">
+    <tr class="well">
+    <tr ng-repeat="item in cart.items | orderBy:'name'">
+        <td class="tdCenter">{{item.name}}</td>
+        <td class="tdRight">(<b>{{item.quantity}}</b> X <b>{{item.price | currency}}</b>)</td>
+        <td class="tdRight">{{item.price * item.quantity | currency}}</td>
+
+    </tr>
+    <tr>
+        <td class="tdRight" colspan="4">
+
+            <pre><b>Items: {{cart.getTotalCount()}}</b> <b> Total: {{cart.getTotalPrice() | currency}}</b></pre>
+            <a href="default.htm#/cart" class="btn btn-block btn-info" role="button"><i class="icon-shopping-cart"/>
+                GoTo Cart</a>
+        </td>
+    </tr>
+
+    </tr>
+</table>
+
+
+
+

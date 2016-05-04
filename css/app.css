@@ -1,0 +1,58 @@
+
+
+.one {
+    float:left;
+    color: #000000;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 800px;
+    border-collapse: collapse;
+
+}
+
+.two {
+    float: right;
+    color: #000000;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 300px;
+    border-collapse: collapse;
+
+}
+
+.table td.tdRight {
+    text-align: right;
+    border-width: 3px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+.table td.tdLeft {
+    text-align: left;
+    border-width: 3px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+.table td.tdCenter {
+    text-align: center;
+    border-width: 3px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+}
+
+
+
+/* Cells in even rows are same color */
+tr:nth-child(even) td { background: #F1F1F1; }
+
+/* Cells in odd rows are another color  */
+tr:nth-child(odd) td { background: #FEFEFE; }
+
+/*tr td:hover { background: #7ab5d3; color: black; } /* Hover cell effect! */
+
+
+
+
+
+
+
