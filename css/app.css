@@ -6,6 +6,10 @@
     font-family: Helvetica, Arial, sans-serif;
     width: 800px;
     border-collapse: collapse;
+    border-width: 5px;
+    padding: 5px;
+    border-style: solid;
+    border-color: #a9c6c9;
 
 }
 
@@ -15,42 +19,47 @@
     font-family: Helvetica, Arial, sans-serif;
     width: 300px;
     border-collapse: collapse;
+    border-width: 5px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #a9c6c9;
+/*    width: auto;*/
 
 }
 
 .table td.tdRight {
     text-align: right;
-    border-width: 3px;
-    padding: 8px;
-    border-style: solid;
-    border-color: #a9c6c9;
+
 }
 .table td.tdLeft {
     text-align: left;
-    border-width: 3px;
-    padding: 8px;
-    border-style: solid;
-    border-color: #a9c6c9;
+
 }
 .table td.tdCenter {
     text-align: center;
-    border-width: 3px;
-    padding: 8px;
-    border-style: solid;
-    border-color: #a9c6c9;
+
 }
 
+.table-nonfluid {
+    width: auto;
+}
 
+table, th, td {
+    border: 1px solid black;
+}
 
 /* Cells in even rows are same color */
-tr:nth-child(even) td { background: #F1F1F1; }
+tr:nth-child(even) td { background: #9acfea; }
 
 /* Cells in odd rows are another color  */
-tr:nth-child(odd) td { background: #FEFEFE; }
+tr:nth-child(odd) td { background: #b9def0; }
 
 /*tr td:hover { background: #7ab5d3; color: black; } /* Hover cell effect! */
 
-
+.contactformcontainer{
+    width:100%;
+    background-color: green;
+}
 
 
 
