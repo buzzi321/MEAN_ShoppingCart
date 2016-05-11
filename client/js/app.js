@@ -6,17 +6,22 @@ var storeApp = angular.module('AngularStore', ['ngRoute','ngAnimate']).
   config(['$routeProvider', function($routeProvider) {
   $routeProvider.
       when('/store', {
-        templateUrl: 'partials/store.htm',
+        templateUrl: 'partials/store.html',
         controller: storeController
 
       }).
       when('/cart', {
-        templateUrl: 'partials/shoppingCart.htm',
+        templateUrl: 'partials/shoppingCart.html',
         controller: storeController
 
       }).
+  when('/login', {
+      templateUrl: 'partials/login.html',
+      controller: storeController
+
+  }).
       otherwise({
-        redirectTo: '/store'
+        redirectTo: '/login'
 
       });
 }]);
