@@ -1,0 +1,99 @@
+﻿<!-- items -->
+<table class="one table table-bordered">
+
+    <!-- header -->
+    <tr class="well">
+        <td class="tdCenter"><b>Item</b></td>
+        <td class="tdCenter"><b>Quantity</b></td>
+        <td class="tdRight"><b>Price</b></td>
+        <td class="tdCenter"><b>Delete</b></td>
+    </tr>
+
+
+    <!-- empty cart message -->
+    <tr class="well" ng-hide="cart.getTotalCount() > 0">
+        <td class="tdCenter" colspan="4">
+            Your cart is empty.
+        </td>
+    </tr>
+
+    <!-- cart items -->
+    <tr ng-repeat="item in cart.items | orderBy:'name'">
+        <td class="tdLeft">{{item.name}}</td>
+        <td class="tdCenter">
+            <div class="input-append">
+                <input
+                        class="span3 text-center" type="text"
+                        ng-model="item.quantity"
+                        ng-change="cart.saveItems()"/>
+                <button
+                        class="btn btn-success" type="button"
+                        ng-disabled="item.quantity >= 10"
+                        ng-click="cart.addItem(item.sku, item.name, item.price, +1)">+
+                </button>
+                <button
+                        class="btn btn-warning" type="button"
+                        ng-disabled="item.quantity <= 1"
+                        ng-click="cart.addItem(item.sku, item.name, item.price, -1)">-
+                </button>
+            </div>
+        </td>
+        <td class="tdRight">{{item.price * item.quantity | currency}}</td>
+        <td class="tdCenter" title="remove from cart">
+            <a href="" ng-click="cart.addItem(item.sku, item.name, item.price, -10000000)">
+                <i class="icon-remove"/>
+            </a>
+        </td>
+    </tr>
+
+    <!-- footer -->
+    <tr class="well">
+        <td class="tdLeft"><b>Total</b></td>
+        <td class="tdCenter"><b>{{cart.getTotalCount()}}</b></td>
+        <td class="tdRight"><b>{{cart.getTotalPrice() | currency}}</b></td>
+        <td class="tdRight"></td>
+    </tr>
+
+</table>
+
+
+<!-- buttons -->
+<div class="span4">
+    <p class="text-info">
+        <button
+                class="btn btn-block"
+                onclick="window.location.href='/'">
+            <i class="icon-chevron-left"/> back to store
+        </button>
+        <button
+                class="btn btn-block btn-danger"
+                ng-click="cart.clearItems()"
+                ng-disabled="cart.getTotalCount() < 1">
+            <i class="icon-trash icon-white"/> clear cart
+        </button>
+    </p>
+
+    <br/><br/>
+
+    <p class="text-info">
+        <button
+                class="btn btn-block btn-primary"
+                ng-click="cart.checkout('PayPal')"
+                ng-disabled="cart.getTotalCount() < 1">
+            <i class="icon-ok icon-white"/> check out using PayPal
+        </button>
+        <button
+                class="btn btn-block btn-primary"
+                ng-click="cart.checkout('Google')"
+                ng-disabled="cart.getTotalCount() < 1">
+            <i class="icon-ok icon-white"/> check out using Google
+        </button>
+    </p>
+
+
+</div>
+
+
+<div ng-controller="logoutController">
+    <a ng-click='logout()' class="btn btn-default">Logout</a>
+</div>

@@ -33,20 +33,7 @@ function store() {
         new product("TNG", "Tangerine", "Easier to peel than oranges!", 8, 50, 3, 4, 1, 1, 2),
         new product("WML", "Watermelon", "Nothing comes close on those hot summer days.", 4, 90, 4, 4, 0, 1, 1)
     ];
-    this.dvaCaption = [
-        "Negligible",
-        "Low",
-        "Average",
-        "Good",
-        "Great"
-    ];
-    this.dvaRange = [
-        "below 5%",
-        "between 5 and 10%",
-        "between 10 and 20%",
-        "between 20 and 40%",
-        "above 40%"
-    ];
+
 }
 store.prototype.getProduct = function (sku) {
     for (var i = 0; i < this.products.length; i++) {

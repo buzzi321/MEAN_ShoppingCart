@@ -1,0 +1,73 @@
+﻿<div class="form-control">
+
+    <input type="text" ng-model="search" class="search-query" style="width: 180px" placeholder="Search">
+    <br/>
+    <br/>
+
+</div>
+
+
+
+
+
+
+<!--Products Table-->
+<table class="one table table-bordered">
+    <tr class="well">
+    <tr class="animate" ng-repeat="product in store.products | orderBy:'name' | filter:search">
+        <td class="tdCenter"><img ng-src="img/products/{{product.sku}}.jpg" alt="{{product.name}}"/></td>
+        <td class="tdCenter">
+            <b>{{product.name}}</b><br/>
+            {{product.description}}
+        </td>
+        <td class="tdRight">
+            {{product.price | currency}}
+        </td>
+        <td class="tdRight">
+            <input type="button" class="btn btn-info" value="Add to cart"
+                   ng-click="cart.addItem(product.sku, product.name, product.price, 1)">
+
+            </input>
+        </td>
+    </tr>
+    </tr>
+</table>
+
+
+
+<!--Cart Table-->
+
+<table class="two table table-bordered">
+    <tr class="well">
+    <tr ng-repeat="item in cart.items | orderBy:'name'">
+        <td class="tdCenter">{{item.name}}</td>
+        <td class="tdRight">(<b>{{item.quantity}}</b> X <b>{{item.price | currency}}</b>)</td>
+        <td class="tdRight">{{item.price * item.quantity | currency}}</td>
+
+    </tr>
+    <tr>
+        <td class="tdRight" colspan="4">
+
+            <pre><b>Items: {{cart.getTotalCount()}}</b> <b> Total: {{cart.getTotalPrice() | currency}}</b></pre>
+            <a href="index.html#/cart" class="btn btn-block btn-info" role="button"><i class="icon-shopping-cart"/>
+                GoTo Cart</a>
+        </td>
+    </tr>
+
+    </tr>
+
+
+</table>
+
+<a href="index.html#/adminpage" class="btn btn-info pull-right" role="button" style="align: right">Admin Page</a>
+<div ng-controller="logoutController">
+    <a ng-click='logout()' class="btn btn-info pull-right">Logout</a>
+</div>
+
+
+
+
+
+
+
+
