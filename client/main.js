@@ -28,11 +28,19 @@ storeApp.config(function ($routeProvider) {
       .when('/adminpage', {
           templateUrl: 'partials/admin.html',
           controller: 'loginController',
-          access: {restricted: false}
+          access: {restricted: false,
+                    adminpage: true}
       })
       .when('/cart', {
           templateUrl: 'partials/shoppingCart.html',
           controller: 'storeController',
+          access: {restricted: true}
+
+
+      })
+      .when('/restrictedpage', {
+          templateUrl: 'partials/restrictedpage.html',
+          controller: 'loginController',
           access: {restricted: true}
 
 
@@ -49,8 +57,7 @@ storeApp.run(function ($rootScope, $location, $route, AuthService) {
                 .then(function(){
                     var profile = $rootScope.profile;
                     if (profile === "Restricted_User" && next.access.adminpage){
-                        alert("You don't have access to this Page");
-                        $location.path('/home');
+                        $location.path('/restrictedpage');
                         $route.reload();
                     }
                     else if (next.access.restricted && !AuthService.isLoggedIn()){
@@ -61,6 +68,9 @@ storeApp.run(function ($rootScope, $location, $route, AuthService) {
         });
 });
 
+/*storeApp.run(function ($rootScope) {
+    $rootScope.profile = "NA";
+});*/
 
 
 // create a data service that provides a store and a shopping cart that

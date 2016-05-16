@@ -94,7 +94,7 @@ tr:nth-child(odd) td { background: #b9def0; }
 
 .form--login input[type="text"], .form--login input[type="password"] {
     background-color: #3b4148;
-    color: #0e0e0e;
+    color: #9acfea;
     border-color: #000000;
 
 }

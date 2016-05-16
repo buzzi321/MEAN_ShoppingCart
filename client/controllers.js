@@ -1,6 +1,6 @@
 angular.module('storeApp').controller('loginController',
-  ['$scope', '$location', 'AuthService',
-  function ($scope, $location, AuthService) {
+  ['$scope', '$location', 'AuthService','$rootScope',
+  function ($scope, $location, AuthService, $rootScope) {
 
     $scope.login = function () {
 
@@ -12,8 +12,8 @@ angular.module('storeApp').controller('loginController',
       AuthService.login($scope.loginForm.username, $scope.loginForm.password)
 
         // handle success
-      .then(function () {
-          var profile = $scope.bprofile;
+     .then(function () {
+          $scope.profile= $rootScope.profile;
           $location.path('/');
           $scope.disabled = false;
           $scope.loginForm = {};
@@ -31,21 +31,6 @@ angular.module('storeApp').controller('loginController',
 
 }]);
 
-angular.module('storeApp').controller('logoutController',
-  ['$scope', '$location', 'AuthService',
-  function ($scope, $location, AuthService) {
-
-    $scope.logout = function () {
-
-      // call logout from service
-      AuthService.logout()
-        .then(function () {
-          $location.path('/login');
-        });
-
-    };
-
-}]);
 
 
 angular.module('storeApp').controller('logoutController',
@@ -64,12 +49,13 @@ angular.module('storeApp').controller('logoutController',
 
         }]);
 
-angular.module('storeApp').controller('storeController',['$scope', '$routeParams', 'DataService',
-function ($scope, $routeParams, DataService) {
+angular.module('storeApp').controller('storeController',['$scope', '$routeParams', 'DataService','$rootScope',
+function ($scope, $routeParams, DataService, $rootScope) {
 
   // get store and cart from service
   $scope.store = DataService.store;
   $scope.cart = DataService.cart;
+    $scope.profile=$rootScope.profile;
 
 
 

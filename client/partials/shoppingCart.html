@@ -60,23 +60,22 @@
 <!-- buttons -->
 <div class="span4">
     <p class="text-info">
-        <button
-                class="btn btn-block"
-                onclick="window.location.href='/'">
-            <i class="icon-chevron-left"/> back to store
-        </button>
+
+        <a href="index.html#/home" class="btn btn-primary btn-block" role="button" style="align: center">Home</a>
         <button
                 class="btn btn-block btn-danger"
                 ng-click="cart.clearItems()"
                 ng-disabled="cart.getTotalCount() < 1">
             <i class="icon-trash icon-white"/> clear cart
         </button>
+
+
     </p>
 
     <br/><br/>
 
     <p class="text-info">
-        <button
+ <!--       <button
                 class="btn btn-block btn-primary"
                 ng-click="cart.checkout('PayPal')"
                 ng-disabled="cart.getTotalCount() < 1">
@@ -88,12 +87,12 @@
                 ng-disabled="cart.getTotalCount() < 1">
             <i class="icon-ok icon-white"/> check out using Google
         </button>
+-->
+    <div ng-controller="logoutController">
+        <a ng-click='logout()' class="btn btn-block btn-primary" role="button" style="align: right">Logout</a>
+    </div>
     </p>
 
 
 </div>
 
-
-<div ng-controller="logoutController">
-    <a ng-click='logout()' class="btn btn-default">Logout</a>
-</div>

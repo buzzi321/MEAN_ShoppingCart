@@ -51,8 +51,8 @@ angular.module('storeApp').factory('AuthService',
         .success(function (data, status) {
           if(status === 200 && data.status){
             user = true;
-            $rootScope.$broadcast('bprofile', data.profile);
             profile = data.profile;
+            $rootScope.profile = data.profile;
             deferred.resolve();
           } else {
             user = false;
@@ -66,7 +66,9 @@ angular.module('storeApp').factory('AuthService',
         });
 
       // return promise object
+
       return deferred.promise;
+
 
 
     }
