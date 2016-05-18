@@ -1,29 +1,29 @@
 ﻿//----------------------------------------------------------------
 // shopping cart
 //
-function shoppingCart(cartName) {
+function shoppingCart(cartName, username) {
     this.cartName = cartName;
     this.clearCart = false;
     this.checkoutParameters = {};
     this.items = [];
 
     // load items from local storage when initializing
-    this.loadItems();
+    this.loadItems(username);
 
     // save items to local storage when unloading
     var self = this;
     $(window).unload(function () {
         if (self.clearCart) {
-            self.clearItems();
+            self.clearItems(username);
         }
-        self.saveItems();
+        self.saveItems(username);
         self.clearCart = false;
     });
 }
 
 // load items from local storage
-shoppingCart.prototype.loadItems = function () {
-    var items = localStorage != null ? localStorage[this.cartName + "_items"] : null;
+shoppingCart.prototype.loadItems = function (username) {
+    var items = localStorage != null ? localStorage[this.cartName + "_"+ username + "_items"] : null;
     if (items != null && JSON != null) {
         try {
             var items = JSON.parse(items);
@@ -42,14 +42,14 @@ shoppingCart.prototype.loadItems = function () {
 }
 
 // save items to local storage
-shoppingCart.prototype.saveItems = function () {
+shoppingCart.prototype.saveItems = function (username) {
     if (localStorage != null && JSON != null) {
-        localStorage[this.cartName + "_items"] = JSON.stringify(this.items);
+        localStorage[this.cartName + "_"+ username + "_items"] = JSON.stringify(this.items);
     }
 }
 
 // adds an item to the cart
-shoppingCart.prototype.addItem = function (sku, name, price, quantity) {
+shoppingCart.prototype.addItem = function (sku, name, price, quantity,username) {
     quantity = this.toNumber(quantity);
     if (quantity != 0) {
 
@@ -73,7 +73,7 @@ shoppingCart.prototype.addItem = function (sku, name, price, quantity) {
         }
 
         // save changes
-        this.saveItems();
+        this.saveItems(username);
     }
 }
 

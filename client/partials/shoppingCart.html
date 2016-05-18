@@ -29,18 +29,18 @@
                 <button
                         class="btn btn-success" type="button"
                         ng-disabled="item.quantity >= 10"
-                        ng-click="cart.addItem(item.sku, item.name, item.price, +1)">+
+                        ng-click="cart.addItem(item.sku, item.name, item.price, +1,username)">+
                 </button>
                 <button
                         class="btn btn-warning" type="button"
                         ng-disabled="item.quantity <= 1"
-                        ng-click="cart.addItem(item.sku, item.name, item.price, -1)">-
+                        ng-click="cart.addItem(item.sku, item.name, item.price, -1,username)">-
                 </button>
             </div>
         </td>
         <td class="tdRight">{{item.price * item.quantity | currency}}</td>
         <td class="tdCenter" title="remove from cart">
-            <a href="" ng-click="cart.addItem(item.sku, item.name, item.price, -10000000)">
+            <a href="" ng-click="cart.addItem(item.sku, item.name, item.price, -10000000,username)">
                 <i class="icon-remove"/>
             </a>
         </td>

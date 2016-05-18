@@ -1,66 +1,69 @@
-var storeApp = angular.module('storeApp', ['ngRoute']);
+var storeApp = angular.module('storeApp', ['ngRoute', 'ngCookies']);
 
 storeApp.config(function ($routeProvider) {
-  $routeProvider
-      .when('/', {
-        templateUrl: 'partials/store.html',
-          controller: 'storeController',
-          access: {restricted: true}
+    $routeProvider
+        .when('/', {
+            templateUrl: 'partials/store.html',
+            controller: 'storeController',
+            access: {restricted: true}
 
 
-      })
-      .when('/login', {
-        templateUrl: 'partials/login.html',
-        controller: 'loginController',
-          access: {restricted: false}
+        })
+        .when('/login', {
+            templateUrl: 'partials/login.html',
+            controller: 'loginController',
+            access: {restricted: false}
 
-      })
-      .when('/logout', {
-        controller: 'logoutController',
-          access: {restricted: true}
-      })
-      .when('/register', {
-        templateUrl: 'partials/register.html',
-        controller: 'registerController',
-          access: {restricted: false}
+        })
+        .when('/logout', {
+            controller: 'logoutController',
+            access: {restricted: true}
+        })
+        .when('/register', {
+            templateUrl: 'partials/register.html',
+            controller: 'registerController',
+            access: {restricted: false}
 
-      })
-      .when('/adminpage', {
-          templateUrl: 'partials/admin.html',
-          controller: 'loginController',
-          access: {restricted: false,
-                    adminpage: true}
-      })
-      .when('/cart', {
-          templateUrl: 'partials/shoppingCart.html',
-          controller: 'storeController',
-          access: {restricted: true}
-
-
-      })
-      .when('/restrictedpage', {
-          templateUrl: 'partials/restrictedpage.html',
-          controller: 'loginController',
-          access: {restricted: true}
+        })
+        .when('/adminpage', {
+            templateUrl: 'partials/admin.html',
+            controller: 'loginController',
+            access: {
+                restricted: false,
+                adminpage: true
+            }
+        })
+        .when('/cart', {
+            templateUrl: 'partials/shoppingCart.html',
+            controller: 'storeController',
+            access: {restricted: true}
 
 
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+        })
+        .when('/restrictedpage', {
+            templateUrl: 'partials/restrictedpage.html',
+            controller: 'loginController',
+            access: {restricted: true}
+
+
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
 });
 
-storeApp.run(function ($rootScope, $location, $route, AuthService) {
+storeApp.run(function ($rootScope, $location, $route, AuthService, $cookies) {
     $rootScope.$on('$routeChangeStart',
         function (event, next, current) {
             AuthService.getUserStatus()
-                .then(function(){
-                    var profile = $rootScope.profile;
-                    if (profile === "Restricted_User" && next.access.adminpage){
+                .then(function () {
+                    //var profile = $rootScope.profile;
+                    var profile = $cookies.get("profile");
+                    if (profile === "Restricted_User" && next.access.adminpage) {
                         $location.path('/restrictedpage');
                         $route.reload();
                     }
-                    else if (next.access.restricted && !AuthService.isLoggedIn()){
+                    else if (next.access.restricted && !AuthService.isLoggedIn()) {
                         $location.path('/login');
                         $route.reload();
                     }
@@ -69,19 +72,20 @@ storeApp.run(function ($rootScope, $location, $route, AuthService) {
 });
 
 /*storeApp.run(function ($rootScope) {
-    $rootScope.profile = "NA";
-});*/
+ $rootScope.profile = "NA";
+ });*/
 
 
 // create a data service that provides a store and a shopping cart that
 // will be shared by all views (instead of creating fresh ones for each view).
-storeApp.factory("DataService", function () {
+storeApp.factory("DataService", function ($cookies) {
 
+    var username = $cookies.get('username');
     // create store
     var myStore = new store();
 
     // create shopping cart
-    var myCart = new shoppingCart("AngularStore");
+    var myCart = new shoppingCart("AngularStore",username);
 
     // enable PayPal checkout
     // note: the second parameter identifies the merchant; in order to use the
@@ -111,4 +115,27 @@ storeApp.factory("DataService", function () {
         store: myStore,
         cart: myCart
     };
+
+
 });
+
+
+    storeApp.factory("refreshedDataService", function($cookies) {
+
+
+        function getstoreandcart() {
+            var username = $cookies.get('username');
+            var myStore = new store();
+            var myCart = new shoppingCart("Store",username);
+            return {myStore:myStore, myCart:myCart}
+        }
+        return {
+            getData: function() {
+                var storeandcart = getstoreandcart();
+                return storeandcart;
+            }
+
+
+        }
+
+    });

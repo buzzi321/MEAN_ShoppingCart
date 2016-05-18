@@ -1,10 +1,10 @@
 angular.module('storeApp').factory('AuthService',
-  ['$q', '$timeout', '$http', '$rootScope',
-  function ($q, $timeout, $http, $rootScope) {
+  ['$q', '$timeout', '$http', '$cookies',
+  function ($q, $timeout, $http, $cookies) {
 
     // create user variable
     var user = null;
-    var profile = null;
+    //var profile = null;
 
     // return available functions for use in the controllers
     return ({
@@ -44,6 +44,7 @@ angular.module('storeApp').factory('AuthService',
       // create a new instance of deferred
       var deferred = $q.defer();
 
+
       // send a post request to the server
       $http.post('/user/login',
         {username: username, password: password})
@@ -51,8 +52,11 @@ angular.module('storeApp').factory('AuthService',
         .success(function (data, status) {
           if(status === 200 && data.status){
             user = true;
-            profile = data.profile;
-            $rootScope.profile = data.profile;
+            //profile = data.profile;
+            //$rootScope.profile = data.profile;
+            $cookies.put("profile", data.profile);
+            //$rootScope.username = username;
+            $cookies.put("username", username);
             deferred.resolve();
           } else {
             user = false;
@@ -85,6 +89,8 @@ angular.module('storeApp').factory('AuthService',
       $http.get('/user/logout')
         // handle success
         .success(function (data) {
+          $cookies.remove("username");
+          $cookies.remove("profile");
           user = false;
           deferred.resolve();
         })

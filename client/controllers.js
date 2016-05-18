@@ -1,6 +1,6 @@
 angular.module('storeApp').controller('loginController',
-  ['$scope', '$location', 'AuthService','$rootScope',
-  function ($scope, $location, AuthService, $rootScope) {
+  ['$scope', '$location', 'AuthService','$rootScope','$cookies',
+  function ($scope, $location, AuthService, $rootScope, $cookies) {
 
     $scope.login = function () {
 
@@ -13,7 +13,10 @@ angular.module('storeApp').controller('loginController',
 
         // handle success
      .then(function () {
-          $scope.profile= $rootScope.profile;
+          //$scope.profile= $rootScope.profile;
+         //$cookies.put("username", $scope.loginForm.username);
+         //$cookies.put("profile", $rootScope.profile);
+
           $location.path('/');
           $scope.disabled = false;
           $scope.loginForm = {};
@@ -49,17 +52,31 @@ angular.module('storeApp').controller('logoutController',
 
         }]);
 
-angular.module('storeApp').controller('storeController',['$scope', '$routeParams', 'DataService','$rootScope',
-function ($scope, $routeParams, DataService, $rootScope) {
+angular.module('storeApp').controller('storeController',['$scope', '$routeParams', 'DataService','$cookies','refreshedDataService',
+function ($scope, $routeParams, DataService, $cookies, refreshedDataService) {
+
+    $scope.profile = $cookies.get('profile');
+    $scope.username = $cookies.get('username');
 
   // get store and cart from service
-  $scope.store = DataService.store;
-  $scope.cart = DataService.cart;
-    $scope.profile=$rootScope.profile;
+  //$scope.store = DataService.store;
+  //$scope.cart = DataService.cart;
+
+    /*$scope.$watch('$routeChangeSuccess', function() {
+        //refreshedDataService.getData(true);
+    //});*/
+  //$scope.storerefresh = refreshedDataService.getData()
+    var storeandcart = refreshedDataService.getData();
+        $scope.cart = storeandcart.myCart;
+        $scope.store = storeandcart.myStore;
 
 
 
-}])
+
+
+
+
+}]);
 
 
 
