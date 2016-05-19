@@ -5,24 +5,28 @@ storeApp.config(function ($routeProvider) {
         .when('/', {
             templateUrl: 'partials/store.html',
             controller: 'storeController',
-            access: {restricted: true}
+            access: {restricted: true,
+                adminpage:false}
 
 
         })
         .when('/login', {
             templateUrl: 'partials/login.html',
             controller: 'loginController',
-            access: {restricted: false}
+            access: {restricted: false,
+                adminpage:false}
 
         })
         .when('/logout', {
             controller: 'logoutController',
-            access: {restricted: true}
+            access: {restricted: true,
+                adminpage:false}
         })
         .when('/register', {
             templateUrl: 'partials/register.html',
             controller: 'registerController',
-            access: {restricted: false}
+            access: {restricted: false,
+                adminpage:false}
 
         })
         .when('/adminpage', {
@@ -36,14 +40,17 @@ storeApp.config(function ($routeProvider) {
         .when('/cart', {
             templateUrl: 'partials/shoppingCart.html',
             controller: 'storeController',
-            access: {restricted: true}
+            access: {restricted: true,
+                adminpage:false,
+                adminpage:false}
 
 
         })
         .when('/restrictedpage', {
             templateUrl: 'partials/restrictedpage.html',
             controller: 'loginController',
-            access: {restricted: true}
+            access: {restricted: true,
+                adminpage:false}
 
 
         })
