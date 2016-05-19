@@ -2,28 +2,23 @@
 
 // App Module: the name AngularStore matches the ng-app attribute in the main <html> tag
 // the route provides parses the URL and injects the appropriate partial page
-var storeApp = angular.module('AngularStore', ['ngRoute','ngAnimate']).
-  config(['$routeProvider', function($routeProvider) {
-  $routeProvider.
-      when('/store', {
+var storeApp = angular.module('AngularStore', ['ngRoute', 'ngAnimate']).config(['$routeProvider', function ($routeProvider) {
+    $routeProvider.when('/store', {
         templateUrl: 'partials/store.html',
         controller: storeController
 
-      }).
-      when('/cart', {
+    }).when('/cart', {
         templateUrl: 'partials/shoppingCart.html',
         controller: storeController
 
-      }).
-  when('/login', {
-      templateUrl: 'partials/login.html',
-      controller: storeController
+    }).when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: storeController
 
-  }).
-      otherwise({
+    }).otherwise({
         redirectTo: '/login'
 
-      });
+    });
 }]);
 
 // create a data service that provides a store and a shopping cart that

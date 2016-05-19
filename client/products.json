@@ -1,256 +1,130 @@
 {
-  "Products": [
+  "products": [
     {
-      "prodId": "APL",
+      "sku": "APL",
       "name": "Apple",
       "description": "Eat one every day to keep the doctor away!",
-      "col_1": "12",
-      "col_2": "90",
-      "col_3": "0",
-      "col_4": "2",
-      "col_5": "0",
-      "col_6": "1",
-      "col_7": "2"
+      "price": 12
     },
     {
-      "prodId": "AVC",
+      "sku": "AVC",
       "name": "Avocado",
       "description": "Guacamole anyone?",
-      "col_1": "16",
-      "col_2": "90",
-      "col_3": "0",
-      "col_4": "1",
-      "col_5": "1",
-      "col_6": "1",
-      "col_7": "2"
+      "price": 16
     },
     {
-      "prodId": "BAN",
+      "sku": "BAN",
       "name": "Banana",
       "description": "These are rich in Potassium and easy to peel.",
-      "col_1": "4",
-      "col_2": "120",
-      "col_3": "0",
-      "col_4": "2",
-      "col_5": "1",
-      "col_6": "2",
-      "col_7": "2"
+      "price": 4
     },
     {
-      "prodId": "CTP",
+      "sku": "CTP",
       "name": "Cantaloupe",
       "description": "Delicious and refreshing.",
-      "col_1": "3",
-      "col_2": "50",
-      "col_3": "4",
-      "col_4": "4",
-      "col_5": "1",
-      "col_6": "2",
-      "col_7": "0"
+      "price": 3
     },
     {
-      "prodId": "FIG",
+      "sku": "FIG",
       "name": "Fig",
       "description": "OK, not that nutritious, but sooo good!",
-      "col_1": "10",
-      "col_2": "100",
-      "col_3": "0",
-      "col_4": "0",
-      "col_5": "0",
-      "col_6": "1",
-      "col_7": "2"
+      "price": 10
     },
     {
-      "prodId": "GRF",
+      "sku": "GRF",
       "name": "Grapefruit",
       "description": "Pink or red, always healthy and delicious.",
-      "col_1": "11",
-      "col_2": "50",
-      "col_3": "4",
-      "col_4": "4",
-      "col_5": "1",
-      "col_6": "1",
-      "col_7": "1"
+      "price": 11
     },
     {
-      "prodId": "GRP",
+      "sku": "GRP",
       "name": "Grape",
       "description": "Wine is great, but grapes are even better.",
-      "col_1": "8",
-      "col_2": "100",
-      "col_3": "0",
-      "col_4": "3",
-      "col_5": "0",
-      "col_6": "1",
-      "col_7": "1"
+      "price": 8
     },
     {
-      "prodId": "GUA",
+      "sku": "GUA",
       "name": "Guava",
       "description": "Exotic, fragrant, tasty!",
-      "col_1": "8",
-      "col_2": "50",
-      "col_3": "4",
-      "col_4": "4",
-      "col_5": "0",
-      "col_6": "1",
-      "col_7": "2"
+      "price": 8
     },
     {
-      "prodId": "KIW",
+      "sku": "KIW",
       "name": "Kiwi",
       "description": "These come from New Zealand.",
-      "col_1": "14",
-      "col_2": "90",
-      "col_3": "1",
-      "col_4": "4",
-      "col_5": "0",
-      "col_6": "2",
-      "col_7": "2"
+      "price": 14
     },
     {
-      "prodId": "LYC",
+      "sku": "LYC",
       "name": "Lychee",
       "description": "Unusual and highly addictive!",
-      "col_1": "18",
-      "col_2": "125",
-      "col_3": "1",
-      "col_4": "4",
-      "col_5": "0",
-      "col_6": "2",
-      "col_7": "2"
+      "price": 18
     },
     {
-      "prodId": "MAN",
+      "sku": "MAN",
       "name": "Mango",
       "description": "Messy to eat, but well worth it.",
-      "col_1": "8",
-      "col_2": "70",
-      "col_3": "3",
-      "col_4": "4",
-      "col_5": "0",
-      "col_6": "1",
-      "col_7": "1"
+      "price": 8
     },
     {
-      "prodId": "ORG",
+      "sku": "ORG",
       "name": "Orange",
       "description": "Vitamin C anyone? Go ahead, make some juice.",
-      "col_1": "9",
-      "col_2": "70",
-      "col_3": "1",
-      "col_4": "4",
-      "col_5": "2",
-      "col_6": "1",
-      "col_7": "2"
+      "price": 9
     },
     {
-      "prodId": "PAP",
+      "sku": "PAP",
       "name": "Papaya",
       "description": "Super-popular for breakfast.",
-      "col_1": "5",
-      "col_2": "60",
-      "col_3": "3",
-      "col_4": "4",
-      "col_5": "2",
-      "col_6": "2",
-      "col_7": "2"
+      "price": 5
     },
     {
-      "prodId": "PCH",
+      "sku": "PCH",
       "name": "Peach",
       "description": "Add some cream and enjoy.",
-      "col_1": "19",
-      "col_2": "70",
-      "col_3": "1",
-      "col_4": "2",
-      "col_5": "0",
-      "col_6": "1",
-      "col_7": "2"
+      "price": 19
     },
     {
-      "prodId": "PER",
+      "sku": "PER",
       "name": "Pear",
       "description": "Delicious fresh, or cooked in red wine, or distilled.",
-      "col_1": "8",
-      "col_2": "100",
-      "col_3": "0",
-      "col_4": "2",
-      "col_5": "0",
-      "col_6": "1",
-      "col_7": "2"
+      "price": 8
     },
     {
-      "prodId": "PMG",
+      "sku": "PMG",
       "name": "Pomegranate",
       "description": "Delicious, healthy, beautiful, and sophisticated!",
-      "col_1": "19",
-      "col_2": "110",
-      "col_3": "0",
-      "col_4": "2",
-      "col_5": "0",
-      "col_6": "2",
-      "col_7": "0"
+      "price": 19
     },
     {
-      "prodId": "PNP",
+      "sku": "PNP",
       "name": "Pineapple",
       "description": "Enjoy it (but don't forget to peel first).",
-      "col_1": "4",
-      "col_2": "60",
-      "col_3": "0",
-      "col_4": "3",
-      "col_5": "0",
-      "col_6": "0",
-      "col_7": "1"
+      "price": 4
     },
     {
-      "prodId": "PSM",
+      "sku": "PSM",
       "name": "Persimmon",
       "description": "Believe it or not, they are berries!",
-      "col_1": "6",
-      "col_2": "120",
-      "col_3": "4",
-      "col_4": "3",
-      "col_5": "0",
-      "col_6": "1",
-      "col_7": "3"
+      "price": 6
     },
     {
-      "prodId": "STR",
+      "sku": "STR",
       "name": "Strawberry",
       "description": "Beautiful, healthy, and delicious.",
-      "col_1": "7",
-      "col_2": "40",
-      "col_3": "0",
-      "col_4": "4",
-      "col_5": "1",
-      "col_6": "1",
-      "col_7": "2"
+      "price": 7
     },
     {
-      "prodId": "TNG",
+      "sku": "TNG",
       "name": "Tangerine",
       "description": "Easier to peel than oranges!",
-      "col_1": "8",
-      "col_2": "50",
-      "col_3": "3",
-      "col_4": "4",
-      "col_5": "1",
-      "col_6": "1",
-      "col_7": "2"
+      "price": 8
     },
     {
-      "prodId": "WML",
+      "sku": "WML",
       "name": "Watermelon",
       "description": "Nothing comes close on those hot summer days.",
-      "col_1": "4",
-      "col_2": "90",
-      "col_3": "4",
-      "col_4": "4",
-      "col_5": "0",
-      "col_6": "1",
-      "col_7": "1"
+      "price": 4
     }
   ]
 }

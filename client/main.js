@@ -82,10 +82,10 @@ storeApp.factory("DataService", function ($cookies) {
 
     var username = $cookies.get('username');
     // create store
-    var myStore = new store();
+    //var myStore = new store();
 
     // create shopping cart
-    var myCart = new shoppingCart("AngularStore",username);
+    var myCart = new shoppingCart("AngularStore", username);
 
     // enable PayPal checkout
     // note: the second parameter identifies the merchant; in order to use the
@@ -112,7 +112,7 @@ storeApp.factory("DataService", function ($cookies) {
 
     // return data object with store and cart
     return {
-        store: myStore,
+        //store: myStore,
         cart: myCart
     };
 
@@ -120,22 +120,24 @@ storeApp.factory("DataService", function ($cookies) {
 });
 
 
-    storeApp.factory("refreshedDataService", function($cookies) {
+storeApp.factory("refreshedDataService", function ($cookies) {
 
 
-        function getstoreandcart() {
-            var username = $cookies.get('username');
-            var myStore = new store();
-            var myCart = new shoppingCart("Store",username);
-            return {myStore:myStore, myCart:myCart}
+    function getstoreandcart() {
+        var username = $cookies.get('username');
+        //var myStore = new store();
+        var myCart = new shoppingCart("Store", username);
+        //return {myStore:myStore, myCart:myCart}
+        return {myCart: myCart}
+    }
+
+    return {
+        getData: function () {
+            var storeandcart = getstoreandcart();
+            return storeandcart;
         }
-        return {
-            getData: function() {
-                var storeandcart = getstoreandcart();
-                return storeandcart;
-            }
 
 
-        }
+    }
 
-    });
+});

@@ -8,7 +8,7 @@
 // 2: 10-20% DV
 // 3: 20-40% DV
 // 4: above 40% DV
-//
+//https://api.myjson.com/bins/445e4
 function store() {
     this.products = [
         new product("APL", "Apple", "Eat one every day to keep the doctor away!", 12, 90, 0, 2, 0, 1, 2),

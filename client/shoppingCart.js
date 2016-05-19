@@ -23,7 +23,7 @@ function shoppingCart(cartName, username) {
 
 // load items from local storage
 shoppingCart.prototype.loadItems = function (username) {
-    var items = localStorage != null ? localStorage[this.cartName + "_"+ username + "_items"] : null;
+    var items = localStorage != null ? localStorage[this.cartName + "_" + username + "_items"] : null;
     if (items != null && JSON != null) {
         try {
             var items = JSON.parse(items);
@@ -44,12 +44,12 @@ shoppingCart.prototype.loadItems = function (username) {
 // save items to local storage
 shoppingCart.prototype.saveItems = function (username) {
     if (localStorage != null && JSON != null) {
-        localStorage[this.cartName + "_"+ username + "_items"] = JSON.stringify(this.items);
+        localStorage[this.cartName + "_" + username + "_items"] = JSON.stringify(this.items);
     }
 }
 
 // adds an item to the cart
-shoppingCart.prototype.addItem = function (sku, name, price, quantity,username) {
+shoppingCart.prototype.addItem = function (sku, name, price, quantity, username) {
     quantity = this.toNumber(quantity);
     if (quantity != 0) {
 
