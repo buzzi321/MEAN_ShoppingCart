@@ -102,7 +102,7 @@ shoppingCart.prototype.getTotalCount = function (sku) {
 }
 
 // clear the cart
-shoppingCart.prototype.clearItems = function () {
+shoppingCart.prototype.clearItems = function (username) {
     this.items = [];
     this.saveItems(username);
 }

@@ -25,7 +25,7 @@
                 <input
                         class="span3 text-center" type="text"
                         ng-model="item.quantity"
-                        ng-change="cart.saveItems()"/>
+                        ng-change="cart.saveItems(username)"/>
                 <button
                         class="btn btn-success" type="button"
                         ng-disabled="item.quantity >= 10"
@@ -64,7 +64,7 @@
         <a href="index.html#/" class="btn btn-primary btn-block" role="button" style="align: center">Home</a>
         <button
                 class="btn btn-block btn-danger"
-                ng-click="cart.clearItems()"
+                ng-click="cart.clearItems(username)"
                 ng-disabled="cart.getTotalCount() < 1">
             <i class="icon-trash icon-white"/> clear cart
         </button>
