@@ -15,10 +15,10 @@
 
 <body style="background-color: #1b1b1b;padding-left: 5cm;padding-right: 5cm;">
 
-<div ng-if="location.path() == '/login'" style="padding-top: 5cm;"></div>
-<img ng-if="location.path() !== '/login'" ng-src="img/StoreLogo.png" alt="CartLogo" align="middle" width="auto" style="padding-left: 45%"/>
+<div ng-if="location.path() == '/login' || location.path() == '/register'" style="padding-top: 5cm;"></div>
+<img ng-if="location.path() !== '/login' && location.path() !== '/register'" ng-src="img/StoreLogo.png" alt="CartLogo" align="middle" width="auto" style="padding-left: 45%"/>
 
-<section ng-if="location.path() !== '/login'">
+<section ng-if="location.path() !== '/login' && location.path() !== '/register'">
 
 
     <ul class="nav nav-pills pull-right" style="background-color: #1b1b1b;padding-left: 2cm;">

@@ -1,5 +1,5 @@
 <section class="loginsection">
-    <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
+
     <span class="loginspan"></span>
     <h1>Login</h1>
     <form class="form--login" name="form" ng-submit="login()" role="form">
@@ -10,9 +10,10 @@
         <button type="submit" class="btn btn-info" ng-disabled="disabled">Login</button>
     </form>
 
-
+    </br>
     <a href="index.html#/register" class="btn btn-info" role="button" style="align: center">Register Here</a>
 </section>
+<div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
 
 
 

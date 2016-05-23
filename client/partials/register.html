@@ -1,29 +1,23 @@
-<div class="site__container">
-    <div class="grid__container">
-        <div class="col-md-4">
-            <h1>Register</h1>
-            <div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>
-            <form class="form--login" ng-submit="register()">
-                <div class="form-group">
-                    <label style="color:#0e90d2;">Username</label>
-                    <input type="text" class="form-control" name="username" ng-model="registerForm.username" required>
-                </div>
-                <div class="form-group">
-                    <label style="color:#0e90d2;">Password</label>
-                    <input type="password" class="form-control" name="password" ng-model="registerForm.password"
-                           required>
-                </div>
-                <div class="form-group">
-                    <label style="color:#0e90d2;">Profile</label>
-                    <select type="dropdown" name="singleSelect" ng-model="registerForm.profile">
-                        <option value="Restricted_User">Restricted User</option>
-                        <option value="Administrator">Administrator</option>
-                    </select>
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-info" ng-disabled="disabled">Register</button>
-                </div>
-            </form>
+<section class="loginsection">
+
+    <span class="loginspan"></span>
+    <h1>Register</h1>
+    <form class="form--login" name="form" ng-submit="register()" role="form">
+        <input class="logininput" type="text" name="username" id="username" ng-model="registerForm.username" required
+               placeholder="UserName..." autocomplete="off"/>
+        <input class="logininput" type="password" name="password" id="password" ng-model="registerForm.password" required
+               placeholder="Password..."/>
+        <label style="color:#0e90d2;">Profile</label>
+        <select class="logininput" name="singleSelect" ng-model="registerForm.profile" ng-required="true">
+            <option value="">Select Profile</option>
+            <option value="Restricted_User">Restricted User</option>
+            <option value="Administrator">Administrator</option>
+        </select>
+        <div>
+            <button type="submit" class="btn btn-info" ng-disabled="disabled">Register</button>
         </div>
-    </div>
-</div>
+    </form>
+
+
+</section>
+<div ng-show="error" class="alert alert-danger">{{errorMessage}}</div>

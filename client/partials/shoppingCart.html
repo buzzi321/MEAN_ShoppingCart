@@ -41,7 +41,7 @@
         <td class="tdRight">{{item.price * item.quantity | currency}}</td>
         <td class="tdCenter" title="remove from cart">
             <a href="" ng-click="cart.addItem(item.sku, item.name, item.price, -10000000,username)">
-                <i class="icon-remove"/>
+                <i class="glyphicon-remove"/>
             </a>
         </td>
     </tr>
@@ -61,7 +61,7 @@
 <div class="span4">
     <p class="text-info">
 
-        <a href="index.html#/" class="btn btn-primary btn-block" role="button" style="align: center">Home</a>
+        <!--<a href="index.html#/" class="btn btn-primary btn-block" role="button" style="align: center">Home</a>-->
         <button
                 class="btn btn-block btn-danger"
                 ng-click="cart.clearItems(username)"
