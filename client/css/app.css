@@ -158,7 +158,7 @@ tr:nth-child(odd) td {
     top: -40px;
     height: 80px;
     width: 80px;
-    background:url('/img/Storelogo1.png') center center no-repeat #0e90d2;
+    background:url('/img/StoreLogo1.png') center center no-repeat #0e90d2;
     border-radius: 50%;
     box-shadow: 1px 1px 2px rgba(0,0,0,.3);
 }
