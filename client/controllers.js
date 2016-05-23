@@ -15,7 +15,7 @@ angular.module('storeApp').controller('loginController',
                         //$scope.profile= $rootScope.profile;
                         //$cookies.put("username", $scope.loginForm.username);
                         //$cookies.put("profile", $rootScope.profile);
-
+                        $scope.loggedin = true;
                         $location.path('/');
                         $scope.disabled = false;
                         $scope.loginForm = {};

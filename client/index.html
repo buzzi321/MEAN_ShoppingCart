@@ -5,35 +5,35 @@
     <meta charset="utf-8">
     <title>MEAN ShoppingCart</title>
     <!-- styles -->
-    <!--<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/yeti/bootstrap.min.css" rel="stylesheet">-->
-    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
-          type="text/css"/>
-    <link rel="stylesheet" href="../css/app.css">
+    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+    <!--<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"-->
+
+    <link rel="stylesheet" href="./css/app.css">
 
 
 </head>
 
-<div class="container-fluid" style="background-color: #1a1a1a;">
+<body style="background-color: #1b1b1b;padding-left: 5cm;padding-right: 5cm;">
 
-    <div class="row-fluid">
-        <div class="span10 offset1">
-            <h1 class="well">
+<div ng-if="location.path() == '/login'" style="padding-top: 5cm;"></div>
+<img ng-if="location.path() !== '/login'" ng-src="img/StoreLogo.png" alt="CartLogo" align="middle" width="auto" style="padding-left: 45%"/>
 
-                <a href="index.html">
-                    <img ng-src="img/StoreLogo.png" alt="CartLogo" height="100" width="100"/>
-                </a>
+<section ng-if="location.path() !== '/login'">
 
-                Shopping Cart
-            </h1>
 
-            <div ng-view></div>
-        </div>
-    </div>
+    <ul class="nav nav-pills pull-right" style="background-color: #1b1b1b;padding-left: 2cm;">
+        <li role="presentation" class="active"><a href="index.html#/">Home</a></li>
+        <li role="presentation" ng-controller="logoutController"><a ng-click='logout()' role="button">Logout</a></li>
+        <li role="presentation"><a href="index.html#/adminpage">Admin Page</a></li>
 
-</div>
+    </ul>
+
+</section>
+<div ng-view ></div>
+
 
 <!-- scripts -->
-<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>

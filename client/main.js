@@ -60,7 +60,8 @@ storeApp.config(function ($routeProvider) {
 });
 
 storeApp.run(function ($rootScope, $location, $route, AuthService, $cookies) {
-    $rootScope.$on('$routeChangeStart',
+    $rootScope.location = $location
+     $rootScope.$on('$routeChangeStart',
         function (event, next, current) {
             AuthService.getUserStatus()
                 .then(function () {

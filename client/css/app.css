@@ -1,8 +1,4 @@
 
-.well {
-    background-color: #68c9c9;
-}
-
 .one {
     float: left;
     color: #000000;
@@ -149,7 +145,57 @@ tr:nth-child(odd) td {
 }
 
 
+/*Login Page Styles*/
 
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.loginspan {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    top: -40px;
+    height: 80px;
+    width: 80px;
+    background:url('/img/storelogo1.png') center center no-repeat, #f39c12;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.3);
+}
+
+.loginsection {
+    width: 275px;
+    background: #000000;
+    padding: 0 30px 30px 30px;
+    margin: 60px auto;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.logininput {
+    width: 100%;
+    background: #bdc3c7;
+    border: none;
+    height: 30px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.loginbutton {
+    width: 100%;
+    height: 30px;
+    border: none;
+    background: #3498db;
+    color: #ecf0f1;
+    font-weight: 100;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    transition: all ease-in-out .2s;
+    border-bottom: 3px solid #2980b9;
+}
 
 
 
