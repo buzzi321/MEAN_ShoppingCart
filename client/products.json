@@ -1,130 +1,88 @@
 {
   "products": [
     {
-      "sku": "APL",
-      "name": "Apple",
-      "description": "Eat one every day to keep the doctor away!",
-      "price": 12
+      "sku": "GENIE",
+      "name": "Genie® HD DVR receiver",
+      "description": "Genie HD DVR is our flagship receiver that lets you watch and record TV, and much more.",
+      "price": 35
     },
     {
-      "sku": "AVC",
-      "name": "Avocado",
-      "description": "Guacamole anyone?",
-      "price": 16
+      "sku": "GENIE1",
+      "name": "Genie® HD DVR receiver + 2 Clients",
+      "description": "1 Genie® HD DVR receiver for your first TV. 1 Genie® Mini for your second TV.",
+      "price": 40
     },
     {
-      "sku": "BAN",
-      "name": "Banana",
-      "description": "These are rich in Potassium and easy to peel.",
-      "price": 4
+      "sku": "GENIE2",
+      "name": "Genie® HD DVR receiver + 2 Clients",
+      "description": "1 Genie® HD DVR receiver for your first TV. 2 Genie® Minis for your other TVs.",
+      "price": 45
     },
     {
-      "sku": "CTP",
-      "name": "Cantaloupe",
-      "description": "Delicious and refreshing.",
-      "price": 3
+      "sku": "GENIE3",
+      "name": "Genie® HD DVR receiver + 3 Clients",
+      "description": "1 Genie® HD DVR receiver for your first TV. 3 Genie® Minis for your other TVs.",
+      "price": 50
     },
     {
-      "sku": "FIG",
-      "name": "Fig",
-      "description": "OK, not that nutritious, but sooo good!",
-      "price": 10
+      "sku": "GENIE4",
+      "name": "Genie® HD DVR receiver + 4 Clients",
+      "description": "1 Genie® HD DVR receiver for your first TV. 4 Genie® Minis for your other TVs.",
+      "price": 55
     },
     {
-      "sku": "GRF",
-      "name": "Grapefruit",
-      "description": "Pink or red, always healthy and delicious.",
-      "price": 11
+      "sku": "GENIE5",
+      "name": "Genie® HD DVR receiver + 5 Clients",
+      "description": "1 Genie® HD DVR receiver for your first TV. 5 Genie® Minis for your other TVs.",
+      "price": 60
     },
     {
-      "sku": "GRP",
-      "name": "Grape",
-      "description": "Wine is great, but grapes are even better.",
-      "price": 8
-    },
-    {
-      "sku": "GUA",
-      "name": "Guava",
-      "description": "Exotic, fragrant, tasty!",
-      "price": 8
-    },
-    {
-      "sku": "KIW",
-      "name": "Kiwi",
-      "description": "These come from New Zealand.",
-      "price": 14
-    },
-    {
-      "sku": "LYC",
-      "name": "Lychee",
-      "description": "Unusual and highly addictive!",
-      "price": 18
-    },
-    {
-      "sku": "MAN",
-      "name": "Mango",
-      "description": "Messy to eat, but well worth it.",
-      "price": 8
-    },
-    {
-      "sku": "ORG",
-      "name": "Orange",
-      "description": "Vitamin C anyone? Go ahead, make some juice.",
-      "price": 9
-    },
-    {
-      "sku": "PAP",
-      "name": "Papaya",
-      "description": "Super-popular for breakfast.",
-      "price": 5
-    },
-    {
-      "sku": "PCH",
-      "name": "Peach",
-      "description": "Add some cream and enjoy.",
+      "sku": "FSP",
+      "name": "FOX SOCCER PLUS",
+      "description": "Get 24/7 coverage of European and international soccer, rugby and other sports.",
       "price": 19
     },
     {
-      "sku": "PER",
-      "name": "Pear",
-      "description": "Delicious fresh, or cooked in red wine, or distilled.",
-      "price": 8
+      "sku": "MEI",
+      "name": "MLB EXTRA INNINGS 2016",
+      "description": "Enjoy up to 100 out-of-market games a week, including up to 99% of those in HD. Plus, you also get Game Mix, giving you eight games on a single screen",
+      "price": 28.99
     },
     {
-      "sku": "PMG",
-      "name": "Pomegranate",
-      "description": "Delicious, healthy, beautiful, and sophisticated!",
+      "sku": "PTV",
+      "name": "Playboy TV",
+      "description": "Subscribe to Playboy TV and get Playboy TV HD, Playboy TV 2, Playboy TV en Español, and Playboy TV On Demand—all in one package, for one low price.",
       "price": 19
     },
     {
-      "sku": "PNP",
-      "name": "Pineapple",
-      "description": "Enjoy it (but don't forget to peel first).",
-      "price": 4
+      "sku": "NST",
+      "name": "NFL SUNDAY TICKET 2016",
+      "description": "Get every out-of-market game of the 2016 season, every Sunday, on your TV. And experience it all in breathtaking High Definition. Plus see up to eight games LIVE at the same on the Game Mix Channel and track up to 18 players in real time with Player Tracker.",
+      "price": 44.99
     },
     {
-      "sku": "PSM",
-      "name": "Persimmon",
-      "description": "Believe it or not, they are berries!",
-      "price": 6
+      "sku": "NSTM",
+      "name": "NFL SUNDAY TICKET MAX 2016",
+      "description": "Get every out-of-market game every Sunday in HD on your TV and Game Mix Channel, plus: Every 2016 NFL SUNDAY TICKET game on your computer, tablet, and phone; RED ZONE CHANNEL®, Player Tracker, Short Cuts and NFL SUNDAY TICKET On Demand.",
+      "price": 59.99
     },
     {
-      "sku": "STR",
-      "name": "Strawberry",
-      "description": "Beautiful, healthy, and delicious.",
-      "price": 7
+      "sku": "DPP",
+      "name": "PROTECTION PLAN",
+      "description": "The DIRECTV PROTECTION PLAN has you covered. An equipment upgrade every 2 years. Complete DIRECTV System coverage: If any part of your DIRECTV system stops working as expected, we’ll troubleshoot, repair, or replace it",
+      "price": 7.99
     },
     {
-      "sku": "TNG",
-      "name": "Tangerine",
-      "description": "Easier to peel than oranges!",
-      "price": 8
+      "sku": "DHEP",
+      "name": "DIRECTV® HD EXTRA PACK",
+      "description": "Add even more amazing HD entertainment to your channel lineup with DIRECTV HD EXTRA PACK. Enjoy blockbuster movies, gripping documentaries, performances by the hottest music stars, and more, on nine channels, all in HD and only in HD.",
+      "price": 4.5
     },
     {
-      "sku": "WML",
-      "name": "Watermelon",
-      "description": "Nothing comes close on those hot summer days.",
-      "price": 4
+      "sku": "DSP",
+      "name": "DIRECTV SPORTS PACK",
+      "description": "The ultimate add-on package for the ultimate sports fan. Get the best in international sports, MLB Network Strike Zone, Outdoor Channel, plus over 30 Regional Sports Networks—all in one package.",
+      "price": 13.99
     }
   ]
 }
