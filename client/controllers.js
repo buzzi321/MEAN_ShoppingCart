@@ -66,7 +66,7 @@ angular.module('storeApp').controller('storeController', ['$scope', '$routeParam
         //$scope.storerefresh = refreshedDataService.getData()
         $scope.method = 'GET';
         //$scope.url = 'https://api.myjson.com/bins/2nlhs'; //fruits
-        $scope.url = 'https://api.myjson.com/bins/1l0u4';   //DTV products
+        $scope.url = 'https://api.myjson.com/bins/166vw';   //DTV products
 
         $http({method: $scope.method, url: $scope.url, cache: $templateCache})
             .then(function (response) {
