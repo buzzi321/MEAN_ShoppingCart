@@ -57,6 +57,8 @@ storeApp.config(function ($routeProvider) {
         .otherwise({
             redirectTo: '/'
         });
+
+
 });
 
 storeApp.run(function ($rootScope, $location, $route, AuthService, $cookies) {
@@ -126,6 +128,8 @@ storeApp.factory("DataService", function ($cookies) {
 
 
 });
+
+
 
 
 storeApp.factory("refreshedDataService", function ($cookies) {

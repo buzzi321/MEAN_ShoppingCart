@@ -29,7 +29,10 @@ angular.module('storeApp').controller('loginController',
                         $scope.loginForm = {};
                     });
 
+
+
             };
+
 
         }]);
 

@@ -198,4 +198,84 @@ tr:nth-child(odd) td {
 }
 
 
+/*New Menu*/
+
+/* Initial body */
+body {
+    left: 0;
+    margin: 0;
+    overflow: auto;
+    position: relative;
+}
+
+/* Initial menu */
+.menu1 {
+    background: #94c9c9 repeat left top;
+    left: -200px;  /* start off behind the scenes */
+    height: auto;
+    position: fixed;
+    width: 200px;
+}
+
+/* Basic styling */
+
+.jumbotron {
+    background-image: url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/bg.png');
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.menu1 ul {
+    border-top: 1px solid #636366;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu1 li {
+    border-bottom: 1px solid #636366;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 45px;
+    padding-bottom: 3px;
+    padding-left: 20px;
+    padding-top: 3px;
+}
+
+.menu1 a {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.icon-close {
+    cursor: pointer;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.icon-menu {
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-top: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.icon-menu i {
+    margin-right: 5px;
+}
+
+
+/*BigSpaceShipMenu*/
+
+
+
 

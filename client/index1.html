@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <title>MEAN ShoppingCart</title>
     <!-- styles-->
-    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="./css/BigSpaceShip.css" rel="stylesheet" type="text/css">
+
 
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
     <!--<link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"-->
@@ -15,7 +16,6 @@
 
 </head>
 <body>
-
 <div style="background-color: #1b1b1b;padding-left: 3cm;padding-right: 3cm;">
 
 
@@ -23,45 +23,39 @@
 <img ng-if="location.path() !== '/login' && location.path() !== '/register'" ng-src="img/StoreLogo.png" alt="CartLogo"
      align="middle" width="auto" style="padding-left: 45%"/>
 
-<section ng-if="location.path() !== '/login' && location.path() !== '/register'">
 
-
-    <!--   <ul class="nav nav-tabs pull-right" style="background-color: #1b1b1b;padding-left: 2cm;">
-           <li role="presentation"><a href="index.html#/">Home</a></li>
-           <li role="presentation" ng-controller="logoutController"><a ng-click='logout()' role="button">Logout</a></li>
-           <li role="presentation"><a href="index.html#/adminpage">Admin Page</a></li>
-           <li role="presentation"><a href="index.html#/cart">Cart</a></li>
-
-       </ul>-->
-
-    <div class="menu1">
-
-        <!-- Menu icon -->
-        <div class="icon-close">
-            <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
+<!--Start Bigspaceship Menu -->
+<header ng-if="location.path() !== '/login' && location.path() !== '/register'">
+    <nav id="navigation">
+        <div class="menu-trigger">
+            <div class="transition">
+                <div class="line top left"></div>
+                <div class="line top right"></div>
+                <div class="line mid"></div>
+                <div class="line bottom left"></div>
+                <div class="line bottom right"></div>
+            </div>
         </div>
+    </nav>
+</header>
 
-        <!-- Menu -->
-        <ul>
-            <li role="presentation"><a href="index.html#/">Home</a></li>
-            <li role="presentation"><a href="index.html#/adminpage">Admin Page</a></li>
-            <li role="presentation"><a href="index.html#/cart">Cart</a></li>
-            <li class="icon-close" role="presentation" ng-controller="logoutController"><a ng-click='logout()'
-                                                                                           role="button">Logout</a></li>
-        </ul>
-    </div>
+<aside class="sidebar" role="navigation">
+    <section class="widget nav_menu-2 widget_nav_menu">
+        <div class="widget-inner">
+            <ul id="menu-primary-navigation" class="menu">
+                <li class="menu-home" role="presentation"><a href="index1.html#/">Home</a></li>
+                <li class="menu-home" role="presentation"><a href="index1.html#/adminpage">Admin Page</a></li>
+                <li class="menu-home" role="presentation"><a href="index1.html#/cart">Cart</a></li>
+                <li class="icon-close" role="presentation" ng-controller="logoutController"><a ng-click='logout()'
+                                                                                               role="button">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</aside><!-- /.sidebar -->
 
-    <!-- Main body -->
+<!--End Bigspaceship Menu -->
 
-
-    <div class="icon-menu">
-        <i class="glyphicon glyphicon-menu-hamburger"></i>
-
-        Menu
-    </div>
-
-
-</section>
 
 
 <div ng-view ng-cloak></div>
@@ -75,6 +69,8 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
 <script src="./main.js"></script>
 <script src="./menu.js"></script>
+<script data-main="./js/BigSpaceShip_main.min.js" src="./js/BigSpaceShip_require.js"></script>
+
 <script src="./services.js"></script>
 <script src="./controllers.js"></script>
 <script src="./product.js" type="text/javascript"></script>

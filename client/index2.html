@@ -1,0 +1,289 @@
+<!doctype html>
+<html ng-app="storeApp" style="background-color: #1b1b1b">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Label Better by Pete R. | The Pete Design</title>
+    <meta name="title" content="jQuery Fly Side Menu by Pete R. | The Pete Design" />
+    <meta name="description" content="Recreate an iOS7 Airbnb App Side Menu Animation using jQuery and CSS3" />
+    <link rel="image_src" href="/images/label_better_image.png" />
+
+    <meta content="http://www.thepetedesign.com/demos/fly_sidemenu_demo.html" property="og:url" />
+    <meta content="http://www.thepetedesign.com/images/fly_sidemenu_image.png" property="og:image" />
+    <link rel="shortcut icon" id="favicon" href="favicon.png">
+    <meta name="author" content="Pete R.">
+    <link rel="canonical" href="http://www.thepetedesign.com/demos/fly_sidemenu_demo.html" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='./css/fly_sidemenu.css' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="./js/jquery.fly_sidemenu.js"></script>
+    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            background: #272D30;
+            padding: 0;
+            text-align: center;
+            font-family: 'open sans';
+            position: relative;
+            margin: 0;
+            height: 100%;
+        }
+
+        .wrapper {
+            height: auto !important;
+            height: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+
+        h1, h2 {
+            width: 100%;
+            float: left;
+        }
+        h1 {
+            margin-top: 100px;
+            color: #000;
+            margin-bottom: 5px;
+            font-size: 70px;
+            letter-spacing: -4px;
+        }
+        h2 {
+            letter-spacing: 2px;
+            color: #000;
+            font-weight: 100;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .pointer {
+            color: #00B0FF;
+            font-family: 'Pacifico';
+            font-size: 24px;
+            margin-top: 15px;
+            position: fixed;
+            top: 62px;
+            left: 25px;
+        }
+        pre {
+            margin: 80px auto;
+        }
+        pre code {
+            padding: 35px;
+            border-radius: 5px;
+            font-size: 15px;
+            background: rgba(0,0,0,0.1);
+            border: rgba(0,0,0,0.05) 5px solid;
+            max-width: 500px;
+        }
+
+
+        .main {
+            float: left;
+            width: 100%;
+            height: 800px;
+            margin: 0 auto;
+        }
+
+
+        .main h1 {
+            padding:20px 50px 10px;
+            float: left;
+            width: 100%;
+            font-size: 60px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            font-weight: 100;
+            margin: 0;
+            padding-top: 25px;
+            font-family: 'open sans';
+            letter-spacing: -3px;
+            text-transform: uppercase;
+        }
+
+        .main h1.demo1 {
+            background: #1ABC9C;
+        }
+
+        .reload.bell {
+            font-size: 12px;
+            padding: 20px;
+            width: 45px;
+            text-align: center;
+            height: 47px;
+            border-radius: 50px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+        }
+
+        .reload.bell #notification {
+            font-size: 25px;
+            line-height: 140%;
+        }
+
+        .reload, .btn{
+            display: inline-block;
+            border: 4px solid #A2261E;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            background: #CC3126;
+            display: inline-block;
+            line-height: 100%;
+            padding: 0.7em;
+            text-decoration: none;
+            color: #fff;
+            width: 100px;
+            line-height: 140%;
+            font-size: 17px;
+            font-family: open sans;
+            font-weight: bold;
+        }
+        .reload:hover{
+            background: #A2261E;
+        }
+        .btn {
+            width: 200px;
+            color: #fff;
+            border: none;
+            margin-left: 10px;
+            background: #00B0FF;
+        }
+        .clear {
+            width: auto;
+        }
+        .btn:hover, .btn:hover {
+            background: #00CDFF;
+        }
+        .btns {
+            width: 410px;
+            margin: 50px auto;
+        }
+        .credit {
+            background: #f6f6f6;
+            text-align: center;
+            color: #000;
+            padding: 10px;
+            margin: 0 0 40px 0;
+            float: left;
+            width: 100%;
+            letter-spacing: 1px;
+        }
+        .credit a {
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            display: block;
+            padding: 7px;
+            width: 100%;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            background: #00B0FF;
+            font-weight: bold;
+            font-size: 13px;
+            color: #fff;
+            -webkit-transition: all 200ms ease-out;
+            -moz-transition: all 200ms ease-out;
+            -o-transition: all 200ms ease-out;
+            transition: all 200ms ease-out;
+        }
+        .back:hover {
+            background: #00CDFF;
+        }
+
+        .fsm-sidebar {
+            position: fixed;
+        }
+
+        .fsm-button {
+            font-size: 24px;
+            color: #000;
+            top: 36px;
+            line-height: 100%;
+        }
+
+        .page-container {
+            max-width: 700px;
+            margin: auto;
+            height: auto;
+        }
+
+        .page-container p{
+            font-size: 21px;
+            font-weight: 100;
+            line-height: 180%;
+        }
+
+        .page-container h3 {
+            font-family: "noto serif";
+            font-size: 23px;
+        }
+
+    </style>
+    <script>
+        $(document).ready( function() {
+            $(".sidemenu").fly_sidemenu();
+        });
+
+    </script>
+</head>
+<body  >
+
+<div class="pointer" ng-if="location.path() !== '/login' && location.path() !== '/register'">Click here!</div>
+<div class="main">
+
+
+    <div ng-if="location.path() == '/login' || location.path() == '/register'">
+        <script type="text/javascript">
+        document.getElementById("body").fsm-sidebar.z-index="0";
+    </script>   </div>
+
+    <div ng-if="location.path() == '/login' || location.path() == '/register'" style="padding-top: 4cm;"></div>
+    <img ng-if="location.path() !== '/login' && location.path() !== '/register'" ng-src="img/StoreLogo.png" alt="CartLogo"
+         align="middle" width="auto" style="padding-left: 45%"/>
+    <div class="page-container">
+    <div ng-view ng-cloak></div>
+        </div>
+
+    <ul class="sidemenu">
+            <li class="menu-home" role="presentation"><a href="index2.html#/">Home</a></li>
+            <li class="menu-home" role="presentation"><a href="index2.html#/adminpage">Admin Page</a></li>
+            <li class="menu-home" role="presentation"><a href="index2.html#/cart">Cart</a></li>
+            <li class="icon-close" role="presentation" ng-controller="logoutController"><a ng-click='logout()' role="button">Logout</a></li>
+        </ul>
+
+</div>
+<!-- scripts -->
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.min.js"></script>
+<script src="./main.js"></script>
+<script src="./services.js"></script>
+<script src="./controllers.js"></script>
+<script src="./product.js" type="text/javascript"></script>
+<script src="./store.js" type="text/javascript"></script>
+<script src="./shoppingCart.js" type="text/javascript"></script>
+</body>
+
+</html>
